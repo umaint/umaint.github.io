@@ -95,7 +95,7 @@ sudo apt install mariadb-server
 Secure MariaDB:
 
 ```
-mysql_secure_installation
+sudo mysql_secure_installation
 ```
 
 1. There is no current password for root, so press Enter
