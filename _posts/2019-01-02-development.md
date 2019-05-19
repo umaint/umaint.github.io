@@ -5,6 +5,8 @@ title: Create Development VPS
 
 Here you create a development environment on an Ubuntu Server 18.04 LTS.
 
+![Laravel initial screen](/images/laravel.png)
+
 ## Install Nginx
 
 Update system:
