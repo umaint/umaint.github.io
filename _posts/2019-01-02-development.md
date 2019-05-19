@@ -178,7 +178,7 @@ Insert contents:
 
 Test HTTPS index page. You see PHP info page.
 
-## Install Composer, NodeJS, and NPM
+## Install PHP Composer, NodeJS, and NPM
 
 Install prerequisites:
 
@@ -202,4 +202,94 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
 node -v
 npm -v
+```
+
+## Install Laravel
+
+```
+composer global require laravel/installer
+```
+
+Add `$HOME/.config/composer/vendor/bin` to your `PATH`.
+
+## Create New Laravel Project
+
+```
+cd /var/www/html
+laravel new repo-name
+```
+
+## Configure Nginx for Laravel
+
+Edit Nginx default site:
+
+```
+sudo vi /etc/nginx/sites-available/default
+```
+
+Change Nginx webroot to `/var/www/html/repo-name/public`:
+
+```
+root /var/www/html/repo-name/public;
+```
+
+Insert `index.php` into URLS:
+
+```
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+```
+
+Write Nginx default configuration to disk.
+
+Restart Nginx:
+
+```
+sudo systemctl restart nginx
+```
+
+## Configure Laravel Project
+
+Copy the the sample environment variable file to its final destination:
+
+```
+cd repo-name
+cp .env.example .env
+```
+
+Generate an app encryption key:
+
+```
+php artisan key:generate
+```
+
+Edit the environment file:
+
+```
+vi .env
+```
+
+Set value for APP_URL. For example:
+
+```
+APP_URL=https://www.example.com
+```
+
+Write the environment variable file to disk.
+
+Change group to web server:
+
+```
+sudo chgrp -R www-data /var/www/html/repo-name/public
+```
+
+where `ubuntu` is your user name on the Ubuntu server.
+
+## Test
+
+Test access to site. If there are errors:
+
+```
+sudo tail /var/log/nginx/error.log
 ```
