@@ -329,6 +329,8 @@ Add a line at the end:
 PATH="$HOME/.composer/vendor/bin:$PATH"
 ```
 
+Log off and log on again to make this change effective.
+
 ## Create New Laravel Project
 
 ```
