@@ -317,8 +317,6 @@ npm -v
 composer global require laravel/installer
 ```
 
-Add `$HOME/.config/composer/vendor/bin` to your `PATH`.
-
 ## Create New Laravel Project
 
 ```
