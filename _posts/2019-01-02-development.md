@@ -317,6 +317,8 @@ npm -v
 composer global require laravel/installer
 ```
 
+Add `/home/ubuntu/.composer/vendor/bin` to your PATH.
+
 ## Create New Laravel Project
 
 ```
