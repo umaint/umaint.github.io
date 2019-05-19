@@ -170,6 +170,107 @@ Insert contents:
 
 Test HTTPS index page. You see PHP info page.
 
+## Install Mail Server
+
+Add a DNS MX record pointing to your server, e.g. `smtp.example.com` MX record points to IP address `3.4.5.6`.
+
+Open the firewall to allow mail in on port 25:
+
+```
+sudo iptables -A INPUT -p tcp --dport 25 -j ACCEPT
+sudo dpkg-reconfigure iptables-persistent
+```
+
+Install mutt and postfix:
+
+```
+sudo apt install mutt postfix
+```
+
+During the installation, the Postfix Configuration screen appears, informing you of the possible types of Postfix mail server you can have. Tab to **Ok** and press Enter. On the next screen, the actual choices appear. An **Internet Site** (which can both send and receive email directly using SMTP) is the default. Tab to **Ok** and press Enter. On the next screen, you are asked to enter your domain name. This will be your domain name, e.g. `example.com`. Enter your domain name, tab to **Ok**, and press Enter.
+
+Edit the main Postfix configuration file:
+
+```
+sudo vi /etc/postfix/main.cf
+```
+
+Change the line for myhostname to match your actual hostname. For example:
+
+```
+myhostname = smtp.example.com
+```
+
+Duplicate the first three lines for smtpd (incoming) TLS configuration, then change the copied lines so that they specify smtp (outgoing) TLS:
+
+```
+smtp_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtp_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtp_use_tls=yes
+```
+
+Also add a line at the end of the file that reads:
+
+```
+home_mailbox = Maildir/
+```
+
+Write the file to disk, and quit the editor.
+
+Now that everything is ready, restart Postfix:
+
+sudo systemctl restart postfix
+
+Edit your personal Mutt configuration file, using either the vi editor or the vi editor, as you prefer:
+
+```
+vi ~/.muttrc
+```
+
+Here is a Mutt configuration file you can use to get started (and which you can change as you learn more about Mutt):
+
+```
+set mbox_type=Maildir
+set folder="~/Maildir"
+set mask="!^\\.[^.]"
+set mbox="~/Maildir"
+set spoolfile="~/Maildir"
+set sort=reverse-date-received
+set sort_aux=reverse-date-received
+```
+
+Write the file to disk.
+
+Make an initial Maildir directory for yourself:
+
+```
+mkdir ~/Maildir
+```
+
+Edit the Mutt global colors file:
+
+```
+sudo vi /etc/Muttrc.d/colors.rc
+```
+
+Replace every occurrence of `black` by `default` to improve the appearance of Mutt.
+
+```
+:%s/black/default/g
+```
+
+Write the file to disk, and quit the editor.
+
+You can now invoke Mutt for an initial test with the command:
+
+```
+mutt
+```
+
+Since there is no mail as yet, you will get a message, `/home/ubuntu/Maildir is not a mailbox`. This is just a warning.
+
+Visit [https://mxtoolbox.com](https://mxtoolbox.com) to test your mail server set up.
+
 ## Install PHP Composer, NodeJS, and NPM
 
 Install prerequisites:
