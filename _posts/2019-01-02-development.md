@@ -249,6 +249,7 @@ set mbox="~/Maildir"
 set spoolfile="~/Maildir"
 set sort=reverse-date-received
 set sort_aux=reverse-date-received
+set editor='vi'
 ```
 
 Write the file to disk.
