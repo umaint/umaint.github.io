@@ -395,10 +395,10 @@ APP_URL=https://www.example.com
 
 Write the environment variable file to disk.
 
-Change group to web server:
+Change owner to web server:
 
 ```
-sudo chgrp -R www-data public
+sudo chown -R www-data:www-data storage
 ```
 
 where `ubuntu` is your user name on the Ubuntu server.
