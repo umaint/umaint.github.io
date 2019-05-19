@@ -110,7 +110,7 @@ sudo mysql_secure_installation
 Remove unix_socket authentication:
 
 ```
-mysql -u root
+sudo mysql -u root
 update mysql.user set plugin='' where user='root';
 ```
 
