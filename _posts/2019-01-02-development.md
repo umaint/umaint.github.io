@@ -299,6 +299,7 @@ Install PHP composer:
 cd ~
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+sudo chown -R ubuntu:ubuntu .composer
 ```
 
 Install NodeJS and NPM:
