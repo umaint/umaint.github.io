@@ -172,7 +172,7 @@ Test HTTPS index page. You see PHP info page.
 
 ## Install Mail Server
 
-Add a DNS MX record pointing to your server, e.g. `smtp.example.com` MX record points to IP address `3.4.5.6`.
+Add a DNS MX record pointing to your server, e.g. `smtp.example.com` MX record points to IP address `3.4.5.6` with priority `10`.
 
 Open the firewall to allow mail in on port 25:
 
