@@ -7,8 +7,8 @@ permalink:        pretty
 
 # Setup
 title:            Umaint
-tagline:          'Web developer from somewhere'
-description:      'Hyde theme made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+tagline:          'Based on the Hyde theme'
+description:      'Web developer from somewhere'
 url:              https://umaint.github.io
 baseurl:          /
 
