@@ -355,9 +355,7 @@ root /home/ubuntu/repo-name/public;
 Insert `index.php` into URLS:
 
 ```
-location / {
     try_files $uri $uri/ /index.php?$query_string;
-}
 ```
 
 Write Nginx default configuration to disk.
