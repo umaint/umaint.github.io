@@ -398,7 +398,7 @@ Write the environment variable file to disk.
 Change group to web server:
 
 ```
-sudo chgrp -R www-data /var/www/html/repo-name/public
+sudo chgrp -R www-data public
 ```
 
 where `ubuntu` is your user name on the Ubuntu server.
