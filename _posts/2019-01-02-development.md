@@ -172,9 +172,17 @@ Test HTTPS index page. You see PHP info page.
 
 ## Install Mail Server
 
-Add a DNS A record pointing to your server, e.g. `smtp.example.com` points to IP address `3.4.5.6`.
+First, add a DNS A record pointing to your server, e.g. `smtp.example.com` points to IP address `3.4.5.6`.
 
-Also add a DNS MX record pointing to e.g. `smtp.example.com` with priority `10`.
+Second, add a DNS MX record pointing to e.g. `smtp.example.com` with priority `10`.
+
+Third, set up Sender Policy Framework (SPF) for your domain by adding a DNS TXT record. The name of the entry is the naked domain. (Some DNS services use a blank, while others use a commercial-at sign for this.) The value of the text field is:
+
+```
+"v=spf1 mx -all"
+```
+
+This specifies that you will allow the domain's MX server(s) to send email for the domain, but you want to prohibit all other servers from sending email on your behalf.
 
 Open the firewall to allow mail in on port 25:
 
