@@ -334,7 +334,7 @@ Log off and log on again to make this change effective.
 ## Create New Laravel Project
 
 ```
-cd /var/www/html
+cd ~
 laravel new repo-name
 ```
 
@@ -346,10 +346,10 @@ Edit Nginx default site:
 sudo vi /etc/nginx/sites-available/default
 ```
 
-Change Nginx webroot to `/var/www/html/repo-name/public`:
+Change Nginx webroot to `/home/ubuntu/repo-name/public`, where `ubuntu` is your user name on the Ubuntu server:
 
 ```
-root /var/www/html/repo-name/public;
+root /home/ubuntu/repo-name/public;
 ```
 
 Insert `index.php` into URLS:
