@@ -92,13 +92,6 @@ Install packages:
 sudo apt install mariadb-server
 ```
 
-Remove unix_socket authentication:
-
-```
-sudo mysql -u root
-update mysql.user set plugin='' where user='root';
-quit
-```
 Secure MariaDB:
 
 ```
@@ -106,13 +99,11 @@ mysql_secure_installation
 ```
 
 1. There is no current password for root, so press Enter
-2. Enter **y** to set root password
-3. Enter new root password
-4. Re-enter new password
-5. Enter **y** to remove anonymous users
-6. Enter **y** to disallow root login remotely
-7. Enter **y** to remove test database and access to it
-8. Enter **y** to reload privilege tables now
+2. Enter **n** to set root password, since we will use unix socket authentication for root
+3. Enter **y** to remove anonymous users
+4. Enter **y** to disallow root login remotely
+4. Enter **y** to remove test database and access to it
+6. Enter **y** to reload privilege tables now
 
 ## Install PHP
 
