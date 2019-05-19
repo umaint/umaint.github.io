@@ -7,19 +7,19 @@ Here you create a development environment on an Ubuntu Server 18.04 LTS.
 
 ## Install Nginx
 
-Open ports TCP/80 and TCP/443 in firewall:
-
-```
-sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
-sudo sh -c "iptables-save > /etc/iptables/rules.v4"
-```
-
 Update system:
 
 ```
 sudo apt update
 sudo apt upgrade
+```
+
+Open ports TCP/80 and TCP/443 in firewall:
+
+```
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+sudo apt install iptables-persistent
 ```
 
 Install Nginx:
