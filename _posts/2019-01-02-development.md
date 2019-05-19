@@ -172,11 +172,11 @@ Test HTTPS index page. You see PHP info page.
 
 ## Install Mail Server
 
-First, add a DNS A record pointing to your server, e.g. `smtp.example.com` points to IP address `3.4.5.6`.
+First, add a DNS `A` record pointing to your server, e.g. `smtp.example.com` points to IP address `3.4.5.6`.
 
-Second, add a DNS MX record pointing to e.g. `smtp.example.com` with priority `10`.
+Second, add a DNS `MX` record pointing to e.g. `smtp.example.com` with priority `10`.
 
-Third, set up Sender Policy Framework (SPF) for your domain by adding a DNS TXT record. The name of the entry is the naked domain. (Some DNS services use a blank, while others use a commercial-at sign for this.) The value of the text field is:
+Third, set up Sender Policy Framework (SPF) for your domain by adding a DNS `TXT` record. The name of the entry is the naked domain. (Some DNS services use a blank, while others use a commercial-at sign for this.) The value of the text field is:
 
 ```
 "v=spf1 mx -all"
@@ -211,7 +211,7 @@ Change the line for myhostname to match your actual hostname. For example:
 myhostname = smtp.example.com
 ```
 
-Duplicate the first three lines for smtpd (incoming) TLS configuration, then change the copied lines so that they specify smtp (outgoing) TLS:
+Duplicate the first three lines for `smtpd` (incoming) TLS configuration, then change the copied lines so that they specify `smtp` (outgoing) TLS:
 
 ```
 smtp_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
@@ -229,7 +229,9 @@ Write the file to disk, and quit the editor.
 
 Now that everything is ready, restart Postfix:
 
+```
 sudo systemctl restart postfix
+```
 
 Edit your personal Mutt configuration file, using either the vi editor or the vi editor, as you prefer:
 
