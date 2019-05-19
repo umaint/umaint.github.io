@@ -289,8 +289,8 @@ Visit [https://mxtoolbox.com](https://mxtoolbox.com) to test your mail server se
 Install prerequisites:
 
 ```
-sudo apt install curl git unzip
-sudo apt install php-cli php-xml php-json php-mbstring php-tokenizer php-bcmath
+sudo apt install curl git zip unzip
+sudo apt install php-cli php-xml php-json php-mbstring php-tokenizer php-bcmath php-zip
 ```
 
 Install PHP composer:
