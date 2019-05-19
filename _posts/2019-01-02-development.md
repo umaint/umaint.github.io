@@ -112,6 +112,7 @@ Remove unix_socket authentication:
 ```
 sudo mysql -u root
 update mysql.user set plugin='' where user='root';
+quit
 ```
 
 ## Install PHP
