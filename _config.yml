@@ -10,7 +10,7 @@ title:            Umaint
 tagline:          'Based on the Hyde theme'
 description:      'Web developer from somewhere'
 url:              https://umaint.github.io
-baseurl:          /
+baseurl:          https://umaint.github.io/
 
 author:
   name:           'Umaint'
