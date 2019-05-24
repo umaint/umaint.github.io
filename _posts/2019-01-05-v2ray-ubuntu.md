@@ -144,10 +144,10 @@ Open Firefox. Select the option for Network Settings. Choose manual proxy config
 
 ![Firefox manual proxy configuration SOCKS v5 on 127.0.0.1](/images/ss364.png)
 
-Choose port `10808` for your local port to communicate with the V2Ray client. Choose to proxy DNS when using SOCKS v5.
+Choose port `10808` for your local port to communicate with the V2Ray client. Choose to proxy DNS when using SOCKS v5. Click **OK** to save these settings.
 
 ![Firefox manual proxy configuration port 10808 proxy DNS when using SOCKS v5](/images/ss365.png)
 
-Check your IP location now matches your server by visiting [https://www.iplocation.net](https://www.iplocation.net).
+In your Firefox browser, check that your IP location now matches your server by visiting [https://www.iplocation.net](https://www.iplocation.net).
 
 ![IP location when connected from V2Ray client to V2Ray server](/images/ss366.png)
