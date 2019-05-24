@@ -3,17 +3,29 @@ layout: post
 title: V2Ray Client on Ubuntu Linux Desktop
 ---
 
-Installation of V2Ray client on Ubuntu Linux PC.
+Here are some screenshots of installing V2Ray as a client on an Ubuntu Linux Desktop PC.
+
+Open a browser and visit [https://github.com/v2ray/v2ray-core](https://github.com/v2ray/v2ray-core).
 
 ![v2Ray Github repository](/images/ss354.png)
 
+Click the [releases](https://github.com/v2ray/v2ray-core/releases) button.
+
 ![v2Ray releases](/images/ss355.png)
+
+Assuming you have a 64-bit processor in your PC, look for `v2ray-linux-64.zip`.
 
 ![v2Ray for Linux zip file](/images/ss356.png)
 
+From your browser, save the file `v2ray-linux-64.zip` in your `Downloads` directory.
+
 ![v2Ray save zip file](/images/ss357.png)
 
+Extract the `zip` file.
+
 ![v2Ray extract zip file here](/images/ss358.png)
+
+Open the `v2ray-linux-64` directory.
 
 ![v2Ray linux directory in file manager](/images/ss359.png)
 
