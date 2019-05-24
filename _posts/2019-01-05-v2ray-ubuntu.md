@@ -25,13 +25,19 @@ Extract the `zip` file.
 
 ![v2Ray extract zip file here](/images/ss358.png)
 
-Open the `v2ray-linux-64` directory.
+The contents of the `zip` file are extracted to a new directory named `v2ray-linux-64`.
 
 ![v2Ray linux directory in file manager](/images/ss359.png)
 
+Open a terminal and list the contents of the  `v2ray-linux-64` directory.
+
 ![v2Ray linux directory in terminal](/images/ss360.png)
 
+Edit the configuration file, which is named `config.json`.
+
 ![v2Ray edit configuration json file in vi editor](/images/ss361.png)
+
+Your contents will look something like this. IP address, port, and id must match your server.
 
 ```
 {
@@ -126,11 +132,19 @@ Open the `v2ray-linux-64` directory.
 }
 ```
 
+Execute the `v2ray` program with the `config.json` configuration file.
+
 ![v2Ray execution with json config file](/images/ss362.png)
+
+You see a message to say that V2Ray has started.
 
 ![v2Ray started](/images/ss363.png)
 
+Choose manual proxy configuration, SOCKS Host `127.0.0.1`, and SOCKS v5.
+
 ![Firefox manual proxy configuration SOCKS v5 on 127.0.0.1](/images/ss364.png)
+
+Choose port `10808` for your local port to communicate with the V2Ray client. Choose to proxy DNS when using SOCKS v5.
 
 ![Firefox manual proxy configuration port 10808 proxy DNS when using SOCKS v5](/images/ss365.png)
 
