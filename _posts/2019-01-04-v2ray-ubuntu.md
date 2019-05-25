@@ -3,6 +3,8 @@ layout: post
 title: V2Ray Client on Ubuntu Linux Desktop
 ---
 
+For a screencast video of this post, see [https://www.youtube.com/watch?v=dR0N6ynZOqM](https://www.youtube.com/watch?v=dR0N6ynZOqM).
+
 Following are some screenshots of installing V2Ray as a client on an Ubuntu Linux Desktop PC.
 
 Open a browser and visit [https://github.com/v2ray/v2ray-core](https://github.com/v2ray/v2ray-core).
