@@ -41,94 +41,36 @@ Your contents will look something like this. IP address, port, and user id must 
 
 ```
 {
-  "log": {
-    "loglevel": "warning"
-  },
   "inbounds": [{
-    "port": 10808,
+    "port": 10808, 
     "listen": "127.0.0.1",
-    "tag": "socks-inbound",
     "protocol": "socks",
     "settings": {
-      "auth": "noauth",
-      "udp": false,
-      "ip": "127.0.0.1"
-    },
-    "sniffing": {
-      "enabled": true,
-      "destOverride": ["http", "tls"]
+      "udp": true
     }
   }],
   "outbounds": [{
-      "protocol": "vmess",
-      "settings": {
-        "vnext": [
-          {
-            "address": "YOUR.SERVER.IP.ADDRESS",
-            "port": YOURPORT,
-            "users": [
-              {
-                "id": "YOUR-UNIVERSALLY-UNIQUE-ID",
-                "alterId": 233,
-                "security": "auto"
-              }
-            ]
-          }
-        ]
-      }
+    "protocol": "vmess",
+    "settings": {
+      "vnext": [{
+        "address": "YOUR.SERVER.IP.ADDRESS", 
+        "port": YOURPORT,
+        "users": [{ "id": "YOUR-UNIVERSALLY-UNIQUE-ID" }]
+      }]
+    }
   },{
-    "protocol": "blackhole",
-    "settings": {},
-    "tag": "blocked"
+    "protocol": "freedom",
+    "tag": "direct",
+    "settings": {}
   }],
   "routing": {
     "domainStrategy": "IPOnDemand",
-    "rules":[
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "blocked"
-      },
-      {
-        "type": "field",
-        "domain": ["geosite:category-ads"],
-        "outboundTag": "blocked"
-      }
-    ]
-  },
-  "dns": {
-    "hosts": {
-      "domain:v2ray.com": "www.vicemc.net",
-      "domain:github.io": "pages.github.com",
-      "domain:wikipedia.org": "www.wikimedia.org",
-      "domain:shadowsocks.org": "electronicsrealm.com"
-    },
-    "servers": [
-      "1.1.1.1",
-      {
-        "address": "114.114.114.114",
-        "port": 53,
-        "domains": [
-          "geosite:cn"
-        ]
-      },
-      "8.8.8.8",
-      "localhost"
-    ]
-  },
-  "policy": {
-    "levels": {
-      "0": {
-        "uplinkOnly": 0,
-        "downlinkOnly": 0
-      }
-    },
-    "system": {
-      "statsInboundUplink": false,
-      "statsInboundDownlink": false
-    }
-  },
-  "other": {}
+    "rules": [{
+      "type": "field",
+      "ip": ["geoip:private"],
+      "outboundTag": "direct"
+    }]
+  }
 }
 ```
 
