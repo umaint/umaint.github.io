@@ -11,7 +11,7 @@ Right click on the Windows start button, and select PowerShell. In PowerShell, i
 ssh linuxuserid@your.server.ip.address
 ```
 
-where `linuxuserid` is replaced by your actual linux user id, and `your.server.ip.address` is replaced by your actual server IP address or hostname.
+where `linuxuserid` is replaced by your actual Ubuntu Linux user id, and `your.server.ip.address` is replaced by your actual server IP address or hostname.
 
 Once logged on to the server, edit the system control configuration file:
 
