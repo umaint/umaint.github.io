@@ -3,6 +3,8 @@ layout: post
 title: V2Ray Ubuntu Server and Windows Client
 ---
 
+![Windows PowerShell SSH](/images/v2ray-windows-001.png)
+
 Right click on the Windows start button, and select PowerShell. In PowerShell, invoke the SSH feature:
 
 ```
@@ -43,6 +45,8 @@ sudo bash go.sh
 ```
 
 Note the server address, server port, and universally unique id (UUID).
+
+![V2Ray generated port and UUID](/images/v2ray-windows-002.png)
 
 Open the server firewall for the generated port number. For example, if your port number is `31896` and you have already installed `iptables-persistent`, you would put:
 
@@ -93,12 +97,18 @@ Enter the values for:
 
 Click the Open (**??**) button.
 
+![V2RayN Vmess V2Ray server configuration](/images/v2ray-windows-003.png)
+
 In Google Chrome, go to More Tools > Extensions > Open Chrome Web Store. Search for SwitchyOmega by FelisCatus. Add this extension to Chrome. 
 
-Set up the local proxy. The protocol should be SOCKS5. The server should be 127.0.0.1. The port should be 10808.
+Set up the local proxy. 
+
+* The protocol should be SOCKS5
+* The server should be 127.0.0.1
+* The port should be 10808
+
+![SwitchyOmega SOCKS5 proxy on localhost](/images/v2ray-windows-004.png)
 
 In SwitchyOmega, turn on the proxy. 
 
 Check that everything is working by visiting https://www.iplocation.net
-
-windows, powershell, ssh, v2ray, ubuntu, server, gfw, china
