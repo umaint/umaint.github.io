@@ -44,7 +44,7 @@ Execute the V2Ray installation script:
 sudo bash go.sh
 ```
 
-Note the server address, server port, and universally unique id (UUID).
+Note the server port and universally unique id (UUID).
 
 ![V2Ray generated port and UUID](/images/v2ray-windows-002.png)
 
@@ -87,15 +87,15 @@ Launch the application `v2rayN.exe`.
 
 In the system tray, which is at the bottom right of your Windows desktop, open the V2RayN control panel. 
 
-Select the menu bar item for Servers (**???**). Select the first option, which is the one for Add [VMess] server (**??[VMess]???**). 
+Select the menu bar item for Servers (**服务器**). Select the first option, which is the one for Add VMess server (**添加VMess服务器**). 
 
 Enter the values for:
 
-* Server address (**??**)
-* Server port (**??**)
-* UUID (**??**)
+* Server address (**地址**)
+* Server port (**端口**)
+* UUID (**用户**)
 
-Click the Open (**??**) button.
+Click the Open (**确定**) button.
 
 ![V2RayN Vmess V2Ray server configuration](/images/v2ray-windows-003.png)
 
