@@ -5,7 +5,7 @@ title: V2Ray Ubuntu Server and Windows Client
 
 ![Windows PowerShell SSH](/images/v2ray-windows-001.png)
 
-Right click on the Windows start button, and select PowerShell. In PowerShell, invoke the SSH feature:
+Right click on the Windows start button, and select **Windows PowerShell**. In PowerShell, invoke the SSH feature:
 
 ```
 ssh linuxuserid@your.server.ip.address
