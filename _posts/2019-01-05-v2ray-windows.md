@@ -44,7 +44,7 @@ Execute the V2Ray installation script:
 sudo bash go.sh
 ```
 
-Note the server port and universally unique id (UUID).
+Note the generated server port and universally unique id (UUID).
 
 ![V2Ray generated port and UUID](/images/v2ray-windows-002.png)
 
@@ -77,11 +77,11 @@ Exit your Windows PowerShell SSH session with the V2Ray server:
 exit
 ```
 
-We can test the server by installing the V2RayN GUI client for V2Ray on a Windows PC. You will need to have noted the server address, server port, and universally unique id (UUID) from above.
+You can test the server by installing the V2RayN GUI client for V2Ray on a Windows PC. You will need to have made a note of the server address, server port, and universally unique id (UUID).
 
 Open a browser and navigate to [https://github.com/2dust/v2rayN/releases](https://github.com/2dust/v2rayN/releases).
 
-Download `v2rayN-Core.zip` and extract the files from it.
+Download `v2rayN-Core.zip`, and extract the files from it.
 
 Launch the application `v2rayN.exe`.
 
@@ -99,16 +99,18 @@ Click the Open (**确定**) button.
 
 ![V2RayN Vmess V2Ray server configuration](/images/v2ray-windows-003.png)
 
-In Google Chrome, go to More Tools > Extensions > Open Chrome Web Store. Search for SwitchyOmega by FelisCatus. Add this extension to Chrome. 
+In Google Chrome, go to **More Tools** > **Extensions** > **Open Chrome Web Store**. 
 
-Set up the local proxy. 
+Search for SwitchyOmega by FelisCatus. Add this extension to Chrome. 
 
-* The protocol should be SOCKS5
-* The server should be 127.0.0.1
-* The port should be 10808
+Set up the local proxy:
+
+* The protocol should be **SOCKS5**
+* The server should be `127.0.0.1`
+* The port should be `10808`
 
 ![SwitchyOmega SOCKS5 proxy on localhost](/images/v2ray-windows-004.png)
 
 In SwitchyOmega, turn on the proxy. 
 
-Check that everything is working by visiting https://www.iplocation.net
+Check that everything is working by visiting [https://www.iplocation.net](https://www.iplocation.net)
